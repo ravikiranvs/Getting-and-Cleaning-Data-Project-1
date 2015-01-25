@@ -1,0 +1,106 @@
+#CodeBook
+This file describes the variables, the data, and any transformations or work that has been performed to clean up the data.
+
+##Raw Data
+The data is available at: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+On downloading and unzippig you will find a folder named 'UCI HAR Dataset'.
+The files within this folder 'README.txt' and 'features_info.txt' describe the data source in detail.
+
+##Tidy Data
+The tidy data is produced as the output of the 'run_analysis.R' script. It is saved in the same directory as that of the script.
+
+##Variables
+The tidy data has the following variables:
+Activity
+Subject
+Avg_Time_Accelerometer_Body_Mean_X
+Avg_Time_Accelerometer_Body_Mean_Y
+Avg_Time_Accelerometer_Body_Mean_Z
+Avg_Time_Accelerometer_Body_SD_X
+Avg_Time_Accelerometer_Body_SD_Y
+Avg_Time_Accelerometer_Body_SD_Z
+Avg_Time_Accelerometer_Gravity_Mean_X
+Avg_Time_Accelerometer_Gravity_Mean_Y
+Avg_Time_Accelerometer_Gravity_Mean_Z
+Avg_Time_Accelerometer_Gravity_SD_X
+Avg_Time_Accelerometer_Gravity_SD_Y
+Avg_Time_Accelerometer_Gravity_SD_Z
+Avg_Time_Accelerometer_Body_Jerk_Mean_X
+Avg_Time_Accelerometer_Body_Jerk_Mean_Y
+Avg_Time_Accelerometer_Body_Jerk_Mean_Z
+Avg_Time_Accelerometer_Body_Jerk_SD_X
+Avg_Time_Accelerometer_Body_Jerk_SD_Y
+Avg_Time_Accelerometer_Body_Jerk_SD_Z
+Avg_Time_Gyroscope_Gravity_Mean_X
+Avg_Time_Gyroscope_Gravity_Mean_Y
+Avg_Time_Gyroscope_Gravity_Mean_Z
+Avg_Time_Gyroscope_Gravity_SD_X
+Avg_Time_Gyroscope_Gravity_SD_Y
+Avg_Time_Gyroscope_Gravity_SD_Z
+Avg_Time_Gyroscope_Gravity_Jerk_Mean_X
+Avg_Time_Gyroscope_Gravity_Jerk_Mean_Y
+Avg_Time_Gyroscope_Gravity_Jerk_Mean_Z
+Avg_Time_Gyroscope_Gravity_Jerk_SD_X
+Avg_Time_Gyroscope_Gravity_Jerk_SD_Y
+Avg_Time_Gyroscope_Gravity_Jerk_SD_Z
+Avg_Time_Accelerometer_Body_Manitude_Mean
+Avg_Time_Accelerometer_Body_Manitude_SD
+Avg_Time_Accelerometer_Gravity_Manitude_Mean
+Avg_Time_Accelerometer_Gravity_Manitude_SD
+Avg_Time_Accelerometer_Body_Jerk_Manitude_Mean
+Avg_Time_Accelerometer_Body_Jerk_Manitude_SD
+Avg_Time_Gyroscope_Gravity_Manitude_Mean
+Avg_Time_Gyroscope_Gravity_Manitude_SD
+Avg_Time_Gyroscope_Gravity_Jerk_Manitude_Mean
+Avg_Time_Gyroscope_Gravity_Jerk_Manitude_SD
+Avg_FFT_Accelerometer_Body_Mean_X
+Avg_FFT_Accelerometer_Body_Mean_Y
+Avg_FFT_Accelerometer_Body_Mean_Z
+Avg_FFT_Accelerometer_Body_SD_X
+Avg_FFT_Accelerometer_Body_SD_Y
+Avg_FFT_Accelerometer_Body_SD_Z
+Avg_FFT_Accelerometer_Body_Mean_Frequency_X
+Avg_FFT_Accelerometer_Body_Mean_Frequency_Y
+Avg_FFT_Accelerometer_Body_Mean_Frequency_Z
+Avg_FFT_Accelerometer_Body_Jerk_Mean_X
+Avg_FFT_Accelerometer_Body_Jerk_Mean_Y
+Avg_FFT_Accelerometer_Body_Jerk_Mean_Z
+Avg_FFT_Accelerometer_Body_Jerk_SD_X
+Avg_FFT_Accelerometer_Body_Jerk_SD_Y
+Avg_FFT_Accelerometer_Body_Jerk_SD_Z
+Avg_FFT_Accelerometer_Body_Jerk_Mean_Frequency_X
+Avg_FFT_Accelerometer_Body_Jerk_Mean_Frequency_Y
+Avg_FFT_Accelerometer_Body_Jerk_Mean_Frequency_Z
+Avg_FFT_Gyroscope_Gravity_Mean_X
+Avg_FFT_Gyroscope_Gravity_Mean_Y
+Avg_FFT_Gyroscope_Gravity_Mean_Z
+Avg_FFT_Gyroscope_Gravity_SD_X
+Avg_FFT_Gyroscope_Gravity_SD_Y
+Avg_FFT_Gyroscope_Gravity_SD_Z
+Avg_FFT_Gyroscope_Gravity_Mean_Frequency_X
+Avg_FFT_Gyroscope_Gravity_Mean_Frequency_Y
+Avg_FFT_Gyroscope_Gravity_Mean_Frequency_Z
+Avg_FFT_Accelerometer_Body_Manitude_Mean
+Avg_FFT_Accelerometer_Body_Manitude_SD
+Avg_FFT_Accelerometer_Body_Manitude_Mean_Frequency
+Avg_FFT_Accelerometer_Body_Jerk_Manitude_Mean
+Avg_FFT_Accelerometer_Body_Jerk_Manitude_SD
+Avg_FFT_Accelerometer_Body_Jerk_Manitude_Mean_Frequency
+Avg_FFT_Gyroscope_Body_Manitude_Mean
+Avg_FFT_Gyroscope_Body_Manitude_SD
+Avg_FFT_Gyroscope_Body_Manitude_Mean_Frequency
+Avg_FFT_Gyroscope_Body_Jerk_Manitude_Mean
+Avg_FFT_Gyroscope_Body_Jerk_Manitude_SD
+Avg_FFT_Gyroscope_Body_Jerk_Manitude_Mean_Frequency
+
+##Transformation
+In order to get to the tidy data from the raw data the script performs the following data transformations:
+1. Read the test data (from X_test.txt) and combine with it's subject (from subject_test.txt) and activity data (from Y_test.txt).
+2. Read the training (from X_train.txt) data and combine with it's subject (from subject_train.txt) and activity (from Y_train.txt) data.
+3. Merge the rows from both the test and training data into a single data set.
+4. Get the activity names (from activity_labels.txt) and merge them with the main data set.
+5. Select only the required columns from the data.
+6. Rename the columns to be more descriptive. (This is the required data set for step 4 of this assignment)
+7. Aggregate the means of all columns while grouping by subject and activity.
+8. Change the column names to include 'Avg' as they now incude averages.
+9. Write the tidy data set to a txt file.
