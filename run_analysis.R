@@ -72,4 +72,4 @@ DataTidy$Avg_Subject = NULL
 DataTidy$Avg_Activity = NULL
 
 #Write the tidy data set to a txt file.
-write.table(DataTidy, "tidy_data.txt", sep = " ")
+write.table(DataTidy, "tidy_data.txt", sep = " ", row.name=FALSE)
