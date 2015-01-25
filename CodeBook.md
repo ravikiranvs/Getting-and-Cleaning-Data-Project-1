@@ -95,12 +95,12 @@ Avg_FFT_Gyroscope_Body_Jerk_Manitude_Mean_Frequency
 
 ##Transformation
 In order to get to the tidy data from the raw data the script performs the following data transformations:
-1. Read the test data (from X_test.txt) and combine with it's subject (from subject_test.txt) and activity data (from Y_test.txt).
-2. Read the training (from X_train.txt) data and combine with it's subject (from subject_train.txt) and activity (from Y_train.txt) data.
-3. Merge the rows from both the test and training data into a single data set.
-4. Get the activity names (from activity_labels.txt) and merge them with the main data set.
-5. Select only the required columns from the data.
-6. Rename the columns to be more descriptive. (This is the required data set for step 4 of this assignment)
-7. Aggregate the means of all columns while grouping by subject and activity.
-8. Change the column names to include 'Avg' as they now incude averages.
-9. Write the tidy data set to a txt file.
+- Read the test data (from X_test.txt) and combine with it's subject (from subject_test.txt) and activity data (from Y_test.txt).
+- Read the training (from X_train.txt) data and combine with it's subject (from subject_train.txt) and activity (from Y_train.txt) data.
+- Merge the rows from both the test and training data into a single data set.
+- Get the activity names (from activity_labels.txt) and merge them with the main data set.
+- Select only the required columns from the data.
+- Rename the columns to be more descriptive. (This is the required data set for step 4 of this assignment)
+- Aggregate the means of all columns while grouping by subject and activity.
+- Change the column names to include 'Avg' as they now incude averages.
+- Write the tidy data set to a txt file.
